@@ -1,3 +1,7 @@
+<?php
+setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -43,12 +47,14 @@
     </div>
 
     <?php 
-        if (isset($_POST['first_name']) and isset($_POST['last_name']) and isset($_POST['password']) and isset($_POST['email'])){
+        
+        if (isset($_POST['first_name']) and isset($_POST['last_name']) and isset($_POST['password']) and isset($_POST['email'])){#si on a les données
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
             $password = $_POST['password'];
             $email = $_POST['email'];
-
+            
+            #On vérifie si il y a déjà l'email dans la BDD
             $stmt = $bdd->prepare("SELECT email FROM User WHERE email = :email");
             $stmt->bindValue(":email", $email, SQLITE3_TEXT);
             $req = $stmt->execute();
@@ -62,6 +68,7 @@
                 </div>
                 <?php
             } else {
+                #On ajoute l'utilisateur a la BDD
                 $stmt = $bdd->prepare("INSERT INTO User
                                         (first_name, last_name, password, email)
                                         VALUES
