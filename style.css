@@ -19,7 +19,7 @@ div.title-box{
     position: absolute;
     z-index: 999; /*Pour que la boite soit devant le slider*/
     padding: 50px; /*Créer un espace de 50px autour du texte pour rendre cela plus joli*/
-    top: 150px; /*Décale la title box de 180px depuis le haut de l'écran*/
+    top: 150px; /*Décale la title box de 150px depuis le haut de l'écran*/
     box-shadow: -13px 13px 2px 1px rgba(0, 0, 0, .2); /*Créer une sorte d'ombre de la title box*/
     font-family: 'Kenia', cursive; /*Mets la police d'écriture en "Kenia"*/
     text-align: center; /*Centre le texte dans la title box*/
@@ -79,10 +79,32 @@ div.title-box p{
     }
 }
 
-header {
+.title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-bottom: 75px;
+}
+
+.connexion img{
+    width: 50px;
+}
+
+.connexion a{
+    font-family: 'Kenia', cursive; /*Mets la police d'écriture en "Kenia"*/
+    text-decoration: none;
+    color: black;
+}
+
+.connexion {
+    /*Flexbox pour aligner les items*/
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: row;
+    width: 130px;
+    height: 100px;
+    left: 50px;
+    top: 0px;
 }

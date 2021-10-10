@@ -65,3 +65,43 @@ button {
     font-family: 'Ephesis', cursive;
 }
   
+
+.error_inscription{
+    color: red;
+    background-color: #000;
+    text-align: center;
+    width: 300px;
+
+    margin: 0 auto;
+}
+
+.inscription_valid{
+    color: greenyellow;
+    background-color: #000;
+    text-align: center;
+    width: 300px;
+
+    margin: 0 auto;
+}
+
+.home img{
+    width: 50px;
+}
+
+.home a{
+    font-family: 'Kenia', cursive; /*Mets la police d'écriture en "Kenia"*/
+    text-decoration: none;
+    color: black;
+}
+
+.home{
+    /*Flexbox pour aligner les items*/
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: row;
+    width: 130px;
+    height: 100px;
+    left: 50px;
+    top: 0px;
+}

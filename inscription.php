@@ -8,25 +8,27 @@
 </head>
 
 <body>
+    <?php $bdd = new SQLite3('db_grotify.db')?>
+
     <div class = "formulaire">
-        <form action="inscription.php" method="get">
+        <form action="inscription.php" method="post">
             <p>Formulaire d'inscription:</p>
 
             <div>
                 <label for="first_name">Prénom :</label>
-                <input type="text" id="first_name" name="first_name">
+                <input type="text" id="first_name" name="first_name" required>
             </div>
             <div>
                 <label for="last_name">Nom :</label>
-                <input type="text" id="last_name" name="name">
+                <input type="text" id="last_name" name="last_name" required>
             </div>
             <div>
                 <label for="password">Password :</label>
-                <input type="password"  id="password" name="password">
+                <input type="password"  id="password" name="password" required >
             </div>
             <div>
                 <label for="email">Email :</label>
-                <input type="email"  id="email" name="email">
+                <input type="email"  id="email" name="email" required>
             </div>
 
             <div class="button">
@@ -34,6 +36,52 @@
             </div>
         </form>
     </div>
+
+    <div class = "home">
+        <img src="images/icon_home.png">
+        <a href="index.php">Accueil</a>
+    </div>
+
+    <?php 
+        if (isset($_POST['first_name']) and isset($_POST['last_name']) and isset($_POST['password']) and isset($_POST['email'])){
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+
+            $stmt = $bdd->prepare("SELECT email FROM User WHERE email = :email");
+            $stmt->bindValue(":email", $email, SQLITE3_TEXT);
+            $req = $stmt->execute();
+            
+            $donnees = $req -> fetchArray();
+
+            if ($email == $donnees['email']){
+                ?>
+                <div class = "error_inscription">
+                    <p>L'email est déjà utilisé !</p>
+                </div>
+                <?php
+            } else {
+                $stmt = $bdd->prepare("INSERT INTO User
+                                        (first_name, last_name, password, email)
+                                        VALUES
+                                        (:first_name, :last_name, :password, :email)");
+                $stmt -> bindValue(":first_name", $first_name, SQLITE3_TEXT);
+                $stmt -> bindValue(":last_name", $last_name, SQLITE3_TEXT);
+                $stmt -> bindValue(":password", $password, SQLITE3_TEXT );
+                $stmt -> bindValue(":email", $email, SQLITE3_TEXT);
+                $stmt -> execute();?>
+
+                <div class = "inscription_valid">
+                    <p>Votre inscription est validé !</p>
+                </div>
+
+                <?php
+            }
+        } 
+
+        
+    ?>
 </body>
 
 </html>

@@ -11,26 +11,32 @@
 <body>
     <!-- Haut de la page -->
     <header>
-        <div class = "title-box">
-            <!-- Titre de la page -->
-            <h1>Grotify</h1>
+        <div class = "title">
+            <div class = "title-box">
+                <!-- Titre de la page -->
+                <h1>Grotify</h1>
 
-            <!-- Slogan de la page -->
-            <p>De la musique pour tout les goûts !</p>
-        </div>
+                <!-- Slogan de la page -->
+                <p>De la musique pour tout les goûts !</p>
+            </div>
 
-        <div class = "slider">
-            <div class = "slides">
-                <div class = "slide"><img src="images/slider1.jpg"></div>
-                <div class = "slide"><img src="images/slider2.jpg"></div>
-                <div class = "slide"><img src="images/slider3.jpg"></div>
-                <div class = "slide"><img src="images/slider4.jpg"></div>
-                <div class = "slide"><img src="images/slider5.jpg"></div>
+            <div class = "slider">
+                <div class = "slides">
+                    <div class = "slide"><img src="images/slider1.jpg"></div>
+                    <div class = "slide"><img src="images/slider2.jpg"></div>
+                    <div class = "slide"><img src="images/slider3.jpg"></div>
+                    <div class = "slide"><img src="images/slider4.jpg"></div>
+                    <div class = "slide"><img src="images/slider5.jpg"></div>
+                </div>
             </div>
         </div>
-    </header> 
+        
 
-    <a href="inscription.php">Page d'inscription</a>
+        <div class = "connexion">
+            <img src="images/icon_user.png">
+            <a href="inscription.php">Se connecter</a>
+        </div>
+    </header> 
 </body>
 
 </html>
