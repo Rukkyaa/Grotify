@@ -87,17 +87,17 @@ div.title-box p{
     padding-bottom: 75px;
 }
 
-.connexion img{
+.inscription img{
     width: 50px;
 }
 
-.connexion a{
+.inscription a{
     font-family: 'Kenia', cursive; /*Mets la police d'écriture en "Kenia"*/
     text-decoration: none;
     color: black;
 }
 
-.connexion {
+.inscription {
     /*Flexbox pour aligner les items*/
     display: flex;
     position: absolute;

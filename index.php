@@ -32,10 +32,12 @@
         </div>
         
 
-        <div class = "connexion">
+        <div class = "inscription">
             <img src="images/icon_user.png">
             <a href="inscription.php">Se connecter</a>
         </div>
+
+
     </header> 
 </body>
 
