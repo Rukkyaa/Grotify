@@ -102,9 +102,9 @@ div.title-box p{
     display: flex;
     position: absolute;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     width: 130px;
     height: 100px;
-    left: 50px;
-    top: 0px;
+    left: 20px;
+    top: 20px;
 }

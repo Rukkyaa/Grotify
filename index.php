@@ -34,7 +34,8 @@
 
         <div class = "inscription">
             <img src="images/icon_user.png">
-            <a href="inscription.php">Se connecter</a>
+            <a href="inscription.php">S'inscrire</a>
+            <a href="connexion.php">Se connecter</a>
         </div>
 
 
