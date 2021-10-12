@@ -8,7 +8,7 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
 <head>
     <title>Grotify</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="connexionPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="styles/connexionPageStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
 </head>
 
@@ -36,8 +36,7 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
     </div>
 
     <div class = "home">
-        <img src="images/icon_home.png">
-        <a href="index.php">Accueil</a>
+        <a href="accueil.php"><img src="images/logo.jpg"></a>
     </div>
 
     <?php 
@@ -54,8 +53,11 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
             $donnees = $req -> fetchArray();
 
             if ($password == $donnees['password']){
+                $_SESSION['name'] = $donnees['first_name'];
+                echo $_SESSION['name'];
                 ?>
                 <div class = "connexion_valid">
+
                     <p>Connexion réussie</p>
                 </div>
                 <?php

@@ -1,0 +1,110 @@
+* {
+    margin: 0; /*Retire la marge/décalage de base dans le CSS*/
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /*Permet de rendre le scroll fluide*/
+}
+
+body{
+    background: rgb(255, 255, 255) /*Mets l'arrière plan de la page en noir*/
+    
+}
+/*Header*/
+
+/*Titre de la page*/
+div.title-box{
+    background-color: rgb(3, 207, 3); /*Met la couleur de l'arrière plan de la "boîte" du titre en vert*/
+    position: absolute;
+    z-index: 999; /*Pour que la boite soit devant le slider*/
+    padding: 50px; /*Créer un espace de 50px autour du texte pour rendre cela plus joli*/
+    top: 150px; /*Décale la title box de 150px depuis le haut de l'écran*/
+    box-shadow: -13px 13px 2px 1px rgba(0, 0, 0, .2); /*Créer une sorte d'ombre de la title box*/
+    font-family: 'Kenia', cursive; /*Mets la police d'écriture en "Kenia"*/
+    text-align: center; /*Centre le texte dans la title box*/
+}
+
+div.title-box h1{
+    font-size: 80px; /*Mets la police d'écriture du titre de la title box à 80px*/
+}
+
+div.title-box p{
+    font-size: 25px; /*Mets la police d'écriture du slogan de la title box à 25px*/
+}
+
+/*Slider*/
+.slides {
+    /*Flexbox pour aligner les slides*/
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: calc(500px * 4); 
+    height: 500px;
+    animation: glisse 10s infinite ease;/*On applique l'animation créé plus bas*/
+}
+
+.slide{
+    opacity: 0.5; /*Opacité des images à 50%*/
+}
+
+@keyframes glisse{
+
+    0% {
+        transform: translateX(0);
+    }
+
+    16%{
+        transform: translateX(-1000px);
+    }
+
+    33%{
+        transform: translateX(-2000px);
+    }
+
+    50%{
+        transform: translateX(-3000px);
+    }
+
+    66% {
+        transform: translateX(-2000px);
+    }
+
+    82% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 75px;
+}
+
+.inscription img{
+    width: 50px;
+}
+
+.inscription a{
+    font-family: 'Kenia', cursive; /*Mets la police d'écriture en "Kenia"*/
+    text-decoration: none;
+    color: black;
+}
+
+.inscription {
+    /*Flexbox pour aligner les items*/
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    width: 130px;
+    height: 100px;
+    left: 20px;
+    top: 20px;
+}
