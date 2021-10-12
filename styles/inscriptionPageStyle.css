@@ -1,28 +1,29 @@
-html { 
-    background: url(../images/loginBackground.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+html{
+    padding: 0;
+    margin: 0;
+    background-color: #222222;
+}
+
+.formulaire{
+    display: block;
+    text-align: center;
+    padding-top: 200px;
 }
 
 form {
-    position:absolute;
-    top:40%;
-    left:45%;
-    width:400px;
-    height:240px;
-    margin-left:-150px; /* -largeur/2 */
-    margin-top:-100px; /* -hauteur/2 */
-    background:grey;
-
+    display: inline-block;
+    background: #555555;
+    text-align: left;
+    
     /* Encadré pour voir les limites du formulaire */
     padding: 1em;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 1em;
 }
 
-p{
+.formulaire p{
     text-align: center;
     font-family: 'Kenia', cursive;
     font-size: 20px;
@@ -38,9 +39,6 @@ label {
 }
 
 input{
-    /* Pour s'assurer que tous les champs texte ont la même police.*/
-    
-  
     /* Pour que tous les champs texte aient la même dimension */
     width: 300px;
     box-sizing: border-box;
@@ -52,49 +50,13 @@ input{
 input:focus{
     /* Pour souligner légèrement les éléments actifs */
     border-color: #000;
+} 
+
+.logo img{
+    width: 150px;
 }
 
-button {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid rgb(73, 40, 40);
-    background-color: black;
-    color: whitesmoke;
-    border-radius: 1em;
-    margin-left: 40%;
-    font-family: 'Ephesis', cursive;
-}
-  
-
-.error_inscription{
-    color: red;
-    background-color: #000;
-    text-align: center;
-    width: 300px;
-
-    margin: 0 auto;
-}
-
-.inscription_valid{
-    color: greenyellow;
-    background-color: #000;
-    text-align: center;
-    width: 300px;
-
-    margin: 0 auto;
-}
-
-.home img{
-    width: 50px;
-}
-
-.home a{
-    font-family: 'Kenia', cursive; /*Mets la police d'écriture en "Kenia"*/
-    text-decoration: none;
-    color: black;
-}
-
-.home{
+.logo{
     /*Flexbox pour aligner les items*/
     display: flex;
     position: absolute;
@@ -102,6 +64,46 @@ button {
     flex-direction: row;
     width: 130px;
     height: 100px;
-    left: 50px;
-    top: 0px;
+    left: 5%;
+    top: 20px;
+}
+
+
+button{
+    padding: 9px 25px;
+    background-color: #222222;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: 16px;
+    color: #edf0f1;
+    margin-left: 30%;
+}
+
+button:hover{
+    color: #555555;
+}
+
+
+.error_inscription{
+    color: red;
+    background-color: #222222;
+    text-align: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+}
+
+.inscription_valid{
+    color: greenyellow;
+    background-color: #222222;
+    text-align: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
 }

@@ -35,7 +35,7 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
         </form>
     </div>
 
-    <div class = "home">
+    <div class = "logo">
         <a href="accueil.php"><img src="images/logo.jpg"></a>
     </div>
 

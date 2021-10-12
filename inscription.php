@@ -7,7 +7,7 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
 <head>
     <title>Grotify</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles/loginPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="styles/inscriptionPageStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
 </head>
 
@@ -41,9 +41,8 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
         </form>
     </div>
 
-    <div class = "home">
-        <img src="images/icon_home.png">
-        <a href="index.php">Accueil</a>
+    <div class = "logo">
+        <a href="accueil.php"><img src="images/logo.jpg"></a>
     </div>
 
     <?php 

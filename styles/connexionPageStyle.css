@@ -6,24 +6,24 @@ html{
     background-color: #222222;
 }
 
+.formulaire{
+    display: block;
+    text-align: center;
+    padding-top: 200px;
+}
+
 form {
-
-    position:absolute;
-    top:40%;
-    left:45%;
-    width:400px;
-    height:180px;
-    margin-left:-150px; /* -largeur/2 */
-    margin-top:-100px; /* -hauteur/2 */
+    display: inline-block;
     background: #555555;
-
+    text-align: left;
+    
     /* Encadré pour voir les limites du formulaire */
     padding: 1em;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 1em;
 }
 
-p{
+.formulaire p{
     text-align: center;
     font-family: 'Kenia', cursive;
     font-size: 20px;
@@ -39,9 +39,6 @@ label {
 }
 
 input{
-    /* Pour s'assurer que tous les champs texte ont la même police.*/
-    
-  
     /* Pour que tous les champs texte aient la même dimension */
     width: 300px;
     box-sizing: border-box;
@@ -55,36 +52,11 @@ input:focus{
     border-color: #000;
 } 
 
-.error_connexion{
-    color: red;
-    background-color: #000;
-    text-align: center;
-    width: 300px;
-
-    margin: 0 auto;
-}
-
-.connexion_valid{
-    color: greenyellow;
-    background-color: #000;
-    text-align: center;
-    width: 300px;
-
-    margin: 0 auto;
-}
-
-.home img{
-
+.logo img{
     width: 150px;
 }
 
-.home a{
-    font-family: 'Montserrat', sans-serif; /*Mets la police d'écriture en "Kenia"*/
-    text-decoration: none;
-    color: black;
-}
-
-.home{
+.logo{
     /*Flexbox pour aligner les items*/
     display: flex;
     position: absolute;
@@ -108,12 +80,30 @@ button{
     font-weight: 500;
     font-style: 16px;
     color: #edf0f1;
-    text-decoration: none;
-    text-align: center;
     margin-left: 30%;
-    margin-top: 10px;
 }
 
-button :hover{
-    background-color: rgba(0, 136, 169, 0.8);
+button:hover{
+    color: #555555;
+}
+
+
+.error_connexion{
+    color: red;
+    background-color: #222222;
+    text-align: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+}
+
+.connexion_valid{
+    color: greenyellow;
+    background-color: #222222;
+    text-align: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
 }
