@@ -1,6 +1,6 @@
 <?php
 session_start();
-setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
+
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles/connexionPageStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
 </head>
 
 <body>
@@ -32,6 +33,8 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
             <div class="button">
               <button type="submit">Vous inscrire</button>
             </div>
+
+            <p>Pas de compte ? <a href = "inscription.php">Inscrivez vous ici !</a></p>
         </form>
     </div>
 
@@ -57,7 +60,6 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
                 echo $_SESSION['name'];
                 ?>
                 <div class = "connexion_valid">
-
                     <p>Connexion réussie</p>
                 </div>
                 <?php

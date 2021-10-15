@@ -87,6 +87,10 @@ button:hover{
     color: #555555;
 }
 
+a{
+    color: #edf0f1;
+    text-decoration: none;
+}
 
 .error_inscription{
     color: red;

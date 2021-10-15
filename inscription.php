@@ -9,6 +9,7 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles/inscriptionPageStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
 </head>
 
 <body>
@@ -38,6 +39,8 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
             <div class="button">
               <button type="submit">Vous inscrire</button>
             </div>
+
+            <p>Déjà un compte ? <a href = "connexion.php">Connectez vous ici !</a></p>
         </form>
     </div>
 

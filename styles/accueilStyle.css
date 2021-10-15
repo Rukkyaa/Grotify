@@ -16,10 +16,25 @@ li, a, button{
 }
 
 header {
+    color: #edf0f1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%;
+}
+
+iframe{
+    padding-left: 10px;
+    border: red;
+    border-width: 10px;
+    border-radius: 50px;
+}
+
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
 }
 
 .logo{
