@@ -19,8 +19,10 @@ session_start();
             <img class = "logo" src="images/logo.jpg">
 
             <?php
-                if (isset($_SESSION['name'])){
-                    echo "Bonjour " . $_SESSION['name'];
+                if (isset($_SESSION['name'])){?>
+                    <div class = "profile">
+                        <a href="profile.php"><img src="images/icon_user.png"></a>
+                    </div><?php
                 } else {?>
                     <nav>
                         <ul class = "nav_links">
@@ -29,7 +31,7 @@ session_start();
                     </nav>
                 <?php ;}?>
         </header>
-
+        <!--
         <div class = "video">
             <iframe width="420" height="315"
                 src="https://www.youtube.com/embed/M2l-X9M6zAo">
@@ -39,5 +41,6 @@ session_start();
                 src="https://www.youtube.com/embed/GIJ3bL5AtQw">
             </iframe>   
         </div>
+                -->
     </body>
 </html>

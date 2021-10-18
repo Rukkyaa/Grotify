@@ -1,20 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-*{
-    box-sizing: border-box;
+html{
     padding: 0;
     margin: 0;
     background-color: #222222;
 }
 
-li, a, button{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-style: 16px;
-    color: #edf0f1;
-    text-decoration: none;
-}
-
+/*=======================HEADER=========================*/
 header {
     color: #edf0f1;
     display: flex;
@@ -23,18 +15,16 @@ header {
     padding: 30px 5%;
 }
 
-iframe{
-    padding-left: 10px;
-    border: red;
-    border-width: 10px;
-    border-radius: 50px;
+.profile img{
+    width: 70px;
 }
 
-.video{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;    
+li, a{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: 16px;
+    color: #edf0f1;
+    text-decoration: none;
 }
 
 .logo{
@@ -43,10 +33,6 @@ iframe{
 
 header img{
     width: 150px;
-}
-
-.nav_links{
-    list-style: none;
 }
 
 .nav_links li{
@@ -62,15 +48,18 @@ header img{
     color: #0088a9;
 }
 
-.contact button{
-    padding: 20px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
+/*=======================BODY=========================*/
+
+iframe{
+    padding-left: 10px;
+    border: red;
+    border-width: 10px;
     border-radius: 50px;
-    cursor: not-allowed;
-    transition: all 0.3s ease 0s;
 }
 
-.contact :hover{
-    background-color: rgba(0, 136, 169, 0.8);
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
 }
