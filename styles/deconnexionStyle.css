@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 *{
     padding: 0;
     margin: 0;
-    background-color: #d11515;
+    background-color: #222222;
 }
 
 /*=======================HEADER=========================*/
@@ -19,4 +21,15 @@ header {
 
 header img{
     width: 150px;
+}
+
+.text{
+    color: #edf0f1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
 }

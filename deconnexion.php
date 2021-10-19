@@ -20,5 +20,8 @@ session_destroy();
                 <a href="accueil.php"><img src="images/logo.jpg"></a>
             </div>
         </header>
+        <div class = "text"> 
+            <p> Vous avez été déconnetcé </p>
+        </div>
     </body>
 </html>
