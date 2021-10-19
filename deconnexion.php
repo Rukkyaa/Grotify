@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles/profileStyle.css">
+        <link rel="stylesheet" type="text/css" href="styles/deconnexionStyle.css">
         <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
         <title>Profile de <?php echo $_SESSION['name'] ?></title>
     </head>
@@ -19,10 +20,5 @@ session_start();
                 <a href="accueil.php"><img src="images/logo.jpg"></a>
             </div>
         </header>
-        <footer>
-            <div class = "disconnect">
-                <a href = "deconnexion.php">Deconnectez vous !</a>
-            </div>
-        </footer>
     </body>
 </html>

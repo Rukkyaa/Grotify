@@ -1,6 +1,6 @@
 <?php
 session_start();
-#$_SESSION['name'] = NULL;
+#session_destroy();
 ?>
 
 <!DOCTYPE html>

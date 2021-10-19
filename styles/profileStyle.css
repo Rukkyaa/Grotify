@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -19,4 +21,28 @@ header {
 
 header img{
     width: 150px;
+}
+
+/*=======================BODY=========================*/
+
+.disconnect{
+    text-align: center;
+}
+
+.disconnect a{
+    border: solid;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: red;
+    font-family: "Montserrat", sans-serif;
+    color: #edf0f1;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:50px;
 }
