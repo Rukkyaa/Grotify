@@ -2,11 +2,8 @@
 session_start();
 
 $bdd = new SQLite3('db_grotify.db'); #Stockage de la base de données dans la variable "$bdd"
+include('fonction.php');
 
-#Fonction permettant de transformer les liens youtube watch en youtube embed pour les iframes
-function urlToEmbed($urlYTB){
-    $urlYTB = str_replace("https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/", $urlYTB);
-}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +39,7 @@ function urlToEmbed($urlYTB){
 			}?>
 
             <?php 
-                urlToEmbed("https://www.youtube.com/watch?v=jdRE5jJUWhg")
+                urlToEmbed("https://www.youtube.com/watch?v=jdRE5jJUWhg");
             ?>
 
 
