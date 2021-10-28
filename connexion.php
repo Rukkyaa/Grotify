@@ -8,13 +8,16 @@ session_start();
 <head>
     <title>Grotify</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles/connexionPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="connexionPageStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
 </head>
 
 <body>
-    <?php $bdd = new SQLite3('db_grotify.db')?>
+    <?php
+        include('header.php');
+        $bdd = new SQLite3('db_grotify.db');
+    ?>
 
     <div class = "formulaire">
         <form action="connexion.php" method="post">
@@ -35,11 +38,8 @@ session_start();
             </div>
 
             <p>Pas de compte ? <a href = "inscription.php">Inscrivez vous ici !</a></p>
-        </form>
-    </div>
 
-    <div class = "logo">
-        <a href="accueil.php"><img src="images/logo.jpg"></a>
+        </form>
     </div>
 
     <?php 
@@ -69,10 +69,7 @@ session_start();
 
                 <?php
             }
-        } 
-
-        
+        }   
     ?>
 </body>
-
 </html>

@@ -1,19 +1,18 @@
-<?php
-setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <title>Grotify</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles/inscriptionPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="inscriptionPageStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
 </head>
 
 <body>
-    <?php $bdd = new SQLite3('db_grotify.db')?>
+    <?php
+        include('header.php');
+        $bdd = new SQLite3('db_grotify.db');
+    ?>
 
     <div class = "formulaire">
         <form action="inscription.php" method="post">
@@ -42,10 +41,6 @@ setcookie('pseudo', 'Rukkyaa', time() + 365*24*3600, null, null, false, true);
 
             <p>Déjà un compte ? <a href = "connexion.php">Connectez vous ici !</a></p>
         </form>
-    </div>
-
-    <div class = "logo">
-        <a href="accueil.php"><img src="images/logo.jpg"></a>
     </div>
 
     <?php 

@@ -1,27 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-*{
+html{
     padding: 0;
     margin: 0;
     background-color: #222222;
 }
 
 /*=======================HEADER=========================*/
-header {
-    color: #edf0f1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 5%;
-}
-
-.logo{
-    cursor: pointer;
-}
-
-header img{
-    width: 150px;
-}
 
 .text{
     color: #edf0f1;

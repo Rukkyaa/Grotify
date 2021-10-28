@@ -9,7 +9,7 @@ html{
 .formulaire{
     display: block;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 form {
@@ -52,23 +52,6 @@ input:focus{
     border-color: #000;
 } 
 
-.logo img{
-    width: 150px;
-}
-
-.logo{
-    /*Flexbox pour aligner les items*/
-    display: flex;
-    position: absolute;
-    align-items: center;
-    flex-direction: row;
-    width: 130px;
-    height: 100px;
-    left: 5%;
-    top: 20px;
-}
-
-
 button{
     padding: 9px 25px;
     background-color: #222222;
@@ -92,7 +75,7 @@ a{
     text-decoration: none;
 }
 
-.error_connexion{
+.error_inscription{
     color: red;
     background-color: #222222;
     text-align: center;
@@ -102,7 +85,7 @@ a{
     font-size: 25px;
 }
 
-.connexion_valid{
+.inscription_valid{
     color: greenyellow;
     background-color: #222222;
     text-align: center;
