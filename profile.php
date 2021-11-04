@@ -16,7 +16,7 @@ session_start();
     <body>
         
         <?php include ('header.php');?>
-        
+        <div class="text">
         <?php 
             if ($_SESSION['name'] == "admin"){?>
                 <div class = "addMusic">
@@ -24,7 +24,11 @@ session_start();
                 </div>
             <?php ; }
         ?>
-
+            <div class="likes">
+                <a href="likes.php">Vos likes</a>
+            </div>
+        </div>
+        
         <footer>
             <div class = "disconnect">
                 <a href = "deconnexion.php">Deconnectez vous !</a>

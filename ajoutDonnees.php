@@ -112,13 +112,14 @@ include ('fonction.php')
                     <label for="music_type">Type de musique :</label>
 
                     <select name="music_type" id="music_type" required>
+
                         <option value="rock">Rock</option>
                         <option value="pop">Pop</option>
                         <option value="jazz">Jazz</option>
                         <option value="rap">Rap</option>
                         <option value="folk">Folk</option>
                         <option value="punk">Punk</option>
-                        <option value="hip-hop">Hip-Hop</option>
+                        <option value="hiphop">Hip-Hop</option>
                         <option value="rnb">RNB</option>
                         <option value="electro">Electro</option>
                     </select>
@@ -136,7 +137,7 @@ include ('fonction.php')
 
                 <div>
                     <label for="music_time">Durée (seconde) :</label>
-                    <input type="number"  id="music_time" name="music_time" required>
+                    <input type="text"  id="music_time" name="music_time" required>
                 </div>
 
                 <div>

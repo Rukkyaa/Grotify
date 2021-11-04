@@ -18,42 +18,33 @@ include('fonction.php');
     </head>
 
     <body>
-        
-        <?php
-            include('header.php'); #Header de la page
-
-            $stmt = $bdd->prepare("SELECT music_url FROM Music INNER JOIN Artist ON Artist.artist_id = Music.artist_id WHERE Artist.name= :name");
-            $stmt->bindValue(":name", "Wejdene", SQLITE3_TEXT);
-            $req = $stmt->execute();?>
-
-
-            <div class = "video">
-            <?php
-            while ($donnees = $req->fetchArray())
-			{
-			    ?>
-                    <iframe width="420" height="315"
-                        src="<?php echo $donnees['music_url']?>">
-                    </iframe> 
-                    <?php ;
-			}?>
-
-            <?php 
-                urlToEmbed("https://www.youtube.com/watch?v=jdRE5jJUWhg");
-            ?>
-
-
-            </div>
-        <!--
+        <?php include('header.php'); #Header de la page?>
         <div class = "video">
-            <iframe width="420" height="315"
-                src="https://www.youtube.com/embed/M2l-X9M6zAo">
-            </iframe> 
+            <?php
+            $result = [];
+            $types = array("rock","pop","jazz","rap","folk","punk","hiphop","rnb","electro");
+            
+            #Pour chaque type de musique
+            foreach ($types as $type) {?>
+                <h1>Musique <?php echo $type ?></h1>
+            <?php
+                $req = getMusicType($bdd, $type); #On prend toutes les musique "type"
 
-            <iframe width="420" height="315"
-                src="https://www.youtube.com/embed/GIJ3bL5AtQw">
-            </iframe>   
-        </div>-->
+                while ($donnees = $req->fetchArray()){
+                    array_push($result, $donnees['music_thumbnail']); #On les ajoutes dans une liste
+                }
 
+                shuffle($result); #Pour afficher a chaque fois des musiques différentes
+
+                ?><div><?php
+                for ($i=0; $i < 3; $i++) {?>
+                    <a href="visionnage.php?musiqueId=<?php echo getNameByImgUrl($bdd, $result[$i]) ?>"><img src="<?php echo $result[$i]?>"></a>
+                <?php
+                }
+                $result= [];
+                ?>
+                </div><?php
+            }?>
+        </div>
     </body>
 </html>

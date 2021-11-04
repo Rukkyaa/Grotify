@@ -17,8 +17,8 @@ session_destroy();
     <body>
         <?php include ('header.php'); ?>
         
-        <!--<div class = "text"> 
+        <div class = "text"> 
             <p> Vous avez été déconnecté </p>
-        </div> -->
+        </div>
     </body>
 </html>

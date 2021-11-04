@@ -57,6 +57,8 @@ session_start();
 
             if ($password == $donnees['password']){
                 $_SESSION['name'] = $donnees['first_name'];
+                $_SESSION['email'] = $donnees['email'];
+                $_SESSION['user_id'] = $donnees['user_id'];
                 ?>
                 <div class = "connexion_valid">
                     <p>Connexion réussie</p>

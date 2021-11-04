@@ -1,12 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
 html{
     padding: 0;
     margin: 0;
     background-color: #222222;
 }
-
-/*=======================BODY=========================*/
 
 iframe{
     padding-left: 10px;
@@ -25,8 +21,8 @@ iframe{
 
 .video img{
     padding-left: 10px;
-    border: red;
     border-width: 10px;
     border-radius: 25px;
-    width: 420px;
+    width: 100px;
 }
+
