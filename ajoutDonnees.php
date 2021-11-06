@@ -117,7 +117,6 @@ include ('fonction.php')
                         <option value="pop">Pop</option>
                         <option value="jazz">Jazz</option>
                         <option value="rap">Rap</option>
-                        <option value="folk">Folk</option>
                         <option value="punk">Punk</option>
                         <option value="hiphop">Hip-Hop</option>
                         <option value="rnb">RNB</option>

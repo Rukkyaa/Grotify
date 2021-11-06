@@ -1,0 +1,32 @@
+header {
+    color: #edf0f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+}
+
+.profile img{
+    width: 70px;
+}
+
+a{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.logo{
+    cursor: pointer;
+    width: 150px;
+}
+
+.connexionButton a{
+    transition: all 0.3s ease 0s;
+}
+
+.connexionButton a:hover{
+    color: #0088a9;
+}

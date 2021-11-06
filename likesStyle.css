@@ -1,0 +1,27 @@
+html{
+    padding: 0;
+    margin: 0;
+    background-color: #222222;
+}
+
+iframe{
+    padding-left: 10px;
+    border: red;
+    border-width: 10px;
+    border-radius: 50px;
+}
+
+.video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;    
+}
+
+.video img{
+    padding-left: 10px;
+    border: red;
+    border-width: 10px;
+    border-radius: 25px;
+    width: 420px;
+}

@@ -22,7 +22,7 @@ include('fonction.php');
         <div class = "video">
             <?php
             $result = [];
-            $types = array("rock","pop","jazz","rap","folk","punk","hiphop","rnb","electro");
+            $types = array("rock","pop","jazz","rap","punk","hiphop","rnb","electro");
             
             #Pour chaque type de musique
             foreach ($types as $type) {?>
