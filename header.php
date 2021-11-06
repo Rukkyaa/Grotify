@@ -1,9 +1,9 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="header.css">
+    <link rel="stylesheet" type="text/css" href="./styles/header.css">
 </head>
 
 <header>
-    <a href="accueil.php"><img class = "logo" src="images/logo.jpg"></a>
+    <a href="index.php"><img class = "logo" src="images/logo.jpg"></a>
     
     <?php
         if (isset($_SESSION['name'])){?>

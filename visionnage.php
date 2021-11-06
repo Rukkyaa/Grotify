@@ -19,7 +19,7 @@ if (isset($_GET['like'])){
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="visionnageStyle.css">
+        <link rel="stylesheet" type="text/css" href="./styles/visionnageStyle.css">
         <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
         <title>Visionnage de musique</title>
     </head>

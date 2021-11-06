@@ -1,50 +1,50 @@
 <?php
 session_start();
 
+$bdd = new SQLite3('db_grotify.db'); #Stockage de la base de données dans la variable "$bdd"
+include('fonction.php');
+
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <title>Grotify</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
-</head>
 
-<body>
-    <!-- Haut de la page -->
-    <header>
-        <div class = "title">
-            <div class = "title-box">
-                <!-- Titre de la page -->
-                <h1>Grotify</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./styles/accueilStyle.css">
+        <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
+        <title>Grotify</title>
+    </head>
 
-                <!-- Slogan de la page -->
-                <p>De la musique pour tout les goûts !</p>
-            </div>
+    <body>
+        <?php include('header.php'); #Header de la page?>
+        <div class = "video">
+            <?php
+            $result = [];
+            $types = array("rock","pop","jazz","rap","folk","punk","hiphop","rnb","electro");
+            
+            #Pour chaque type de musique
+            foreach ($types as $type) {?>
+                <a href="musique.php?type=<?php echo $type ?>"><h1>Musique <?php echo $type ?></h1></a> 
+            <?php
+                $req = getMusicType($bdd, $type); #On prend toutes les musique "type"
 
-            <div class = "slider">
-                <div class = "slides">
-                    <div class = "slide"><img src="images/slider1.jpg"></div>
-                    <div class = "slide"><img src="images/slider2.jpg"></div>
-                    <div class = "slide"><img src="images/slider3.jpg"></div>
-                    <div class = "slide"><img src="images/slider4.jpg"></div>
-                    <div class = "slide"><img src="images/slider5.jpg"></div>
-                </div>
-            </div>
+                while ($donnees = $req->fetchArray()){
+                    array_push($result, $donnees['music_thumbnail']); #On les ajoutes dans une liste
+                }
+
+                shuffle($result); #Pour afficher a chaque fois des musiques différentes
+
+                ?><div><?php
+                for ($i=0; $i < 3; $i++) {?>
+                    <a href="visionnage.php?musiqueId=<?php echo getNameByImgUrl($bdd, $result[$i]) ?>"><img src="<?php echo $result[$i]?>"></a>
+                <?php
+                }
+                $result= [];
+                ?>
+                </div><?php
+            }?>
         </div>
-        
-
-        <div class = "inscription">
-            <img src="images/icon_user.png">
-            <a href="inscription.php">S'inscrire</a>
-            <a href="connexion.php">Se connecter</a>
-        </div>
-
-        <a href="accueil.php">Accueil</a>
-
-    </header> 
-</body>
-
+    </body>
 </html>

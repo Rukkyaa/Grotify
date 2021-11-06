@@ -9,7 +9,7 @@ session_destroy();
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="deconnexionStyle.css">
+        <link rel="stylesheet" type="text/css" href="./styles/deconnexionStyle.css">
         <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
         <title>Profile de <?php echo $_SESSION['name'] ?></title>
     </head>

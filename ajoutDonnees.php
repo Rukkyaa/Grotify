@@ -10,7 +10,7 @@ include ('fonction.php')
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="ajoutDonneesStyle.css">
+        <link rel="stylesheet" type="text/css" href="./styles/ajoutDonneesStyle.css">
         <link rel = "icon" type = "image/jpg" sizes="16x16" href = "images/icon.jpg">
         <title>Ajout de données</title>
     </head>
