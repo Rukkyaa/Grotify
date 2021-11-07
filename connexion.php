@@ -1,12 +1,12 @@
 <?php
-session_start();
-
+session_start(); #Permet d'accèder aux variables $_SESSION
+$bdd = new SQLite3('db_grotify.db'); #Permet d'accèder à la base de données
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Grotify</title>
+    <title>Page de connexion</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./styles/connexionPageStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
@@ -14,11 +14,10 @@ session_start();
 </head>
 
 <body>
-    <?php
-        include('header.php');
-        $bdd = new SQLite3('db_grotify.db');
-    ?>
 
+    <?php include ('header.php');?>  <!-- Inclusion du header dans la page -->
+
+    <!-- Formulaire pour que l'utilisateur se connecte -->
     <div class = "formulaire">
         <form action="connexion.php" method="post">
             <p>Formulaire de connexion:</p>
@@ -43,8 +42,9 @@ session_start();
     </div>
 
     <?php 
-        
-        if (isset($_POST['password']) and isset($_POST['email'])){#si on a les données
+        #Partie pour connecter l'utilisateur au site
+        if (isset($_POST['password']) and isset($_POST['email'])){ #Si on a les données
+            #On stock les réponses du formulaire dans des variables
             $password = $_POST['password'];
             $email = $_POST['email'];
             

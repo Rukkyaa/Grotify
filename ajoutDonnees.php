@@ -1,7 +1,7 @@
 <?php
-session_start();
-$bdd = new SQLite3('db_grotify.db');
-include ('fonction.php')
+session_start(); # Permet d'accèder aux variables $_SESSION
+$bdd = new SQLite3('db_grotify.db'); # Permet d'accèder a la base de données
+include ('fonction.php') # Permet d'accèder aux fonctions necessaires
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ include ('fonction.php')
 
     <body>
         
-        <?php include ('header.php');?>
+        <?php include ('header.php');?>  <!-- Inclusion du header dans la page -->
         
         <!--------------------------------------------------------------------------------------------------------------------
                                         _             _     _         _                                                       
@@ -28,6 +28,7 @@ include ('fonction.php')
                                                                                                                               
         ---------------------------------------------------------------------------------------------------------------------> 
 
+        <!-- Formulaire pour ajouter un nouvel artiste dans la base de données -->
         <div class = "formulaire">
             <form action="ajoutDonnees.php" method="post">
                 <p>Ajout d'un artiste :</p>
@@ -43,26 +44,28 @@ include ('fonction.php')
                 </div>
 
                 <div class="button">
-                <button type="submit">Ajouter l'artist</button>
+                <button type="submit">Ajouter l'artiste</button>
                 </div>
             </form>
         </div>
 
+        <!-- Partie pour ajouter les informations dans la base de données -->
         <?php 
-        if (isset($_POST['artist_name']) and isset($_POST['artist_country'])){ #Si on a les données
+        if (isset($_POST['artist_name']) and isset($_POST['artist_country'])){ #Si on a les données du formulaire :
+            #On stock les réponses du formulaire dans des variables
             $artist_name = $_POST['artist_name'];
             $artist_country = $_POST['artist_country'];
 
-            
             #On vérifie si il y a déjà l'artiste dans la BDD
             if (verifArtist($bdd, $artist_name)){
                 ?>
+                <!-- Si oui, on affiche un message d'erreur -->
                 <div class = "error_add">
                     <p>L'artiste est déjà enregistré !</p>
                 </div>
                 <?php
             } else {
-                #On ajoute l'artiste a la BDD
+                #Sinon, on ajoute l'artiste dans la base de données + on met un message de réussite
                 addArtist($bdd, $artist_name, $artist_country);
                 ?>
                 <div class = "add_valid">
@@ -82,7 +85,8 @@ include ('fonction.php')
                                                                    | |                                                        
                                                                    |_|                                                                                               
         ---------------------------------------------------------------------------------------------------------------------> 
-
+        
+        <!-- Formulaire pour ajouter une musique dans la base de données -->
         <div class = "formulaire">
             <form action="ajoutDonnees.php" method="post">
                 <p>Ajout d'une musique :</p>
@@ -92,10 +96,11 @@ include ('fonction.php')
 
                     <select name="artist_name" id="artist_name" required>
                         <?php 
-                            // On prends tout le nom des artistes dans la base de données :
+                            # On prends tout le nom des artistes dans la base de données :
                             $req = $bdd->query('SELECT Artist.name 
 									            FROM Artist');
 
+                            # Et on fait une liste déroulante contenant tous les artistes récupérés
                             while ($donnees = $req->fetchArray()){
                                 echo "<option>".  $donnees['name'] . "</option><br>";
                             }
@@ -154,8 +159,12 @@ include ('fonction.php')
                 </div>
             </form>
         </div>
+
+        <!-- Partie pour ajouter la musique dans la base de données -->
         <?php
+        # Vérifications que les valeurs aient bien été rentrées
         if (isset($_POST['artist_name']) and isset($_POST['music_name']) and isset($_POST['music_type']) and isset($_POST['music_like']) and isset($_POST['music_dislike']) and isset($_POST['music_time']) and isset($_POST['music_url']) and isset($_POST['music_thumbnail'])){ #Si on a les données
+            #Stockage de ces valeurs dans des variables pour que ce soit plus simple
             $artist_name = $_POST['artist_name'];
             $music_name = $_POST['music_name'];
             $music_type = $_POST['music_type'];
@@ -165,17 +174,19 @@ include ('fonction.php')
             $music_url = $_POST['music_url'];
             $music_thumbnail = $_POST['music_thumbnail'];
 
-            #On vérifie si il y a déjà l'artiste dans la BDD
+            #On vérifie si il y a déjà le nom de la musique dans la base de données
             if (verifMusic($bdd, $music_name)){
                 ?>
-                    <div class = "error_add">
-                        <p>La musique est déjà enregistré !</p>
-                    </div>
+                <!-- Si oui, on affiche un message d'erreur -->
+                <div class = "error_add">
+                    <p>La musique est déjà enregistré !</p>
+                </div>
                 <?php
             } else {
+                #Sinon, on ajoute la musique dans la base de données via une fonction
                 addMusic($bdd,$artist_name,$music_name,$music_type,$music_like,$music_dislike,$music_time,$music_url,$music_thumbnail);
-
                 ?>
+                <!-- Et on met un message pour montrer que l'ajout a bien été fait -->
                 <div class = "add_valid">
                     <p>Musique ajoutée !</p>
                 </div>
